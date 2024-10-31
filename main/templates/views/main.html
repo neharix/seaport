@@ -1,0 +1,66 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+{% block title %}
+    Baş sahypa
+{% endblock title %}
+{% block head %}
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block navbar_items %}
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item dropdown dropdown-animation">
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">Dropdown</a>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#">Action</a>
+            </li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Another action</a>
+            </li>
+        </ul>
+    </li>
+{% endblock navbar_items %}
+{% block body %}
+    <div class="vh-85">
+        <div id="greeting" class="d-flex align-items-center">
+            <div class="mx-5">
+                <h1 class="text-light">Türkmenbaşy Halkara deňiz porty</h1>
+                <h3 class="text-gray">Siziň Merkezi Aziýa deňiz derwezäňiz</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container my-4">
+        <div class="d-flex  justify-content-center">
+            <div class="row w-90">
+                <div class="item-card m-3">
+                    <div class="w-100">
+                        <img class="w-100" src="{% static 'img/minies/anchor.jpg' %}" />
+                    </div>
+                    <h6 class="mt-3 text-center fw-bold">1800 mt.</h6>
+                    <h6 class="text-center">17 gämi</h6>
+                </div>
+                <div class="item-card m-3">
+                    <div class="w-100">
+                        <img class="w-100" src="{% static 'img/minies/ferry.jpg' %}" />
+                    </div>
+                    <h6 class=" mt-3 text-center fw-bold">300000 ýolagçy</h6>
+                    <h6 class=" text-center">75000 ulag</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block scripts %}
+{% endblock scripts %}

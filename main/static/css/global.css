@@ -1,0 +1,28 @@
+* {
+    font-family: Quicksand;
+}
+
+
+#brand-wrapper {
+    width: 6rem !important;
+}
+
+#brand-wrapper img {
+    width: 100% !important;
+}
+
+.vh-85 {
+    height: 85vh !important;
+}
+
+.w-90 {
+    width: 90% !important;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.text-gray {
+    color: #c1c1c1 !important;
+}
