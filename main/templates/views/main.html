@@ -11,14 +11,32 @@
         <a class="nav-link active" aria-current="page" href="#">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Habarlar</a>
     </li>
     <li class="nav-item dropdown dropdown-animation">
         <a class="nav-link dropdown-toggle"
            href="#"
            role="button"
            data-bs-toggle="dropdown"
-           aria-expanded="false">Dropdown</a>
+           aria-expanded="false">Terminallar</a>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#">Action</a>
+            </li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Another action</a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown dropdown-animation">
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">Hyzmatlarymyz</a>
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item" href="#">Action</a>
@@ -48,16 +66,72 @@
                     <div class="w-100">
                         <img class="w-100" src="{% static 'img/minies/anchor.jpg' %}" />
                     </div>
-                    <h6 class="mt-3 text-center fw-bold">1800 mt.</h6>
+                    <h6 class="mt-3 text-center fw-bold">1 800 mt.</h6>
                     <h6 class="text-center">17 gämi</h6>
                 </div>
                 <div class="item-card m-1">
                     <div class="w-100">
                         <img class="w-100" src="{% static 'img/minies/ferry.jpg' %}" />
                     </div>
-                    <h6 class=" mt-3 text-center fw-bold">300000 ýolagçy</h6>
-                    <h6 class=" text-center">75000 ulag</h6>
+                    <h6 class=" mt-3 text-center fw-bold">300 000 ýolagçy</h6>
+                    <h6 class=" text-center">75 000 ulag</h6>
                 </div>
+                <div class="item-card m-1">
+                    <div class="w-100">
+                        <img class="w-100" src="{% static 'img/minies/crane-track.jpg' %}" />
+                    </div>
+                    <h6 class=" mt-3 text-center fw-bold">Umumy ýük</h6>
+                    <h6 class=" text-center">4 000 000 tn</h6>
+                </div>
+                <div class="item-card m-1">
+                    <div class="w-100">
+                        <img class="w-100" src="{% static 'img/minies/ferry-crane.jpg' %}" />
+                    </div>
+                    <h6 class=" mt-3 text-center fw-bold">Ürgün ýük</h6>
+                    <h6 class=" text-center">3 000 000 tn</h6>
+                </div>
+                <div class="item-card m-1">
+                    <div class="w-100">
+                        <img class="w-100" src="{% static 'img/minies/crane-forc.jpg' %}" />
+                    </div>
+                    <h6 class=" mt-3 text-center fw-bold">Polipropilen</h6>
+                    <h6 class=" text-center">120 000 tn</h6>
+                </div>
+                <div class="item-card m-1">
+                    <div class="w-100">
+                        <img class="w-100" src="{% static 'img/minies/ammar.jpg' %}" />
+                    </div>
+                    <h6 class=" mt-3 text-center fw-bold">Ammar</h6>
+                    <h6 class=" text-center">
+                        200 000 m<sup>2</sup>
+                    </h6>
+                </div>
+                <div class="item-card m-1">
+                    <div class="w-100">
+                        <img class="w-100" src="{% static 'img/minies/containers.jpg' %}" />
+                    </div>
+                    <h6 class=" mt-3 text-center fw-bold">400 000 TEU</h6>
+                </div>
+            </div>
+        </div>
+        <div class="h4 m-3">Habarlar</div>
+        <div class="row justify-content-center">
+            <div class="row w-95 align-items-md-stretch justify-content-center">
+                {% for new in news %}
+                    <div class="card col-md-3 m-2">
+                        <img class="card-img-top p-4 rounded" src="/media/{{ new.image }}" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ new.posted_at|date:"d.m.Y" }}</h5>
+                            <h5 class="text-center new-title">{{ new.title|truncatewords:10 }}</h5>
+                            <div class="mb-3 mt-5 d-flex justify-content-center">
+                                <a href="/new/{{ new.pk }}" class="btn btn-primary">Giňişleýin</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="d-flex justify-content-center">
+                <a class="btn fw-bold" href="#"><i>icon</i> Hemmesini görmek</a>
             </div>
         </div>
     </div>

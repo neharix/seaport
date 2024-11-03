@@ -101,7 +101,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = "tk"
 
 TIME_ZONE = "Asia/Ashgabat"
 
