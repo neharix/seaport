@@ -58,6 +58,42 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         {% block navbar_items %}
                         {% endblock navbar_items %}
+                        <li class="nav-item dropdown dropdown-animation">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">Terminallar</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown dropdown-animation">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">Hyzmatlarymyz</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -66,8 +102,82 @@
             {% block body %}
             {% endblock body %}
         </main>
-        <footer>
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-body-tertiary text-muted border-top border-info">
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <img width="150rem"
+                                     src="{% static 'img/logo.png' %}"
+                                     alt="Türkmenbaşy Halkara deňiz porty" />
+                            </h6>
+                            <p>
+                                Türkmenbaşy Halkara deňiz portunyň taslamasy “Ýaşyl port” (Green Port) halkara ölçegleri göz öňünde tutulyp amala aşyryldy.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                            <p>
+                                <a href="#!" class="text-reset">Angular</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">React</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Vue</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Laravel</a>
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                            <p>
+                                <a href="#!" class="text-reset">Pricing</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Settings</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Orders</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Help</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Habarlaşmak</h6>
+                            <p>Türkmenistan, Balkan welaýaty, Türkmenbaşy şäheri, Şagadam köçesi, 8-nji jaý.</p>
+                            <p>@tisp.marketing@port.com.tm</p>
+                            <p>+993 243 4 91 92</p>
+                            <p>+993 243 4 95 24</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+                © 2024 Ähli hukuklar goralan:
+                <a class="text-reset fw-bold" href="{% url 'home' %}">TURKMENBASHI INTERNATIONAL SEAPORT</a>
+            </div>
+            <!-- Copyright -->
         </footer>
+        <!-- Footer -->
         <script src="{% static 'js/popper.min.js' %}"></script>
         <script src="{% static 'ui_framework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static 'js/jquery.js' %}"></script>

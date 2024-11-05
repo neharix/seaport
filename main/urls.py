@@ -7,6 +7,7 @@ from .views import *
 
 urlpatterns = [
     path("", main, name="home"),
+    path("news/", news, name="news"),
 ]
 
 if settings.DEBUG:

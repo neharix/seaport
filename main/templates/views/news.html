@@ -1,0 +1,41 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+{% block title %}
+    Baş sahypa
+{% endblock title %}
+{% block head %}
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block navbar_items %}
+    <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Baş sahypa</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'news' %}">Habarlar</a>
+    </li>
+{% endblock navbar_items %}
+{% block body %}
+    <div class="container my-4">
+        <div class="h4 m-3">Habarlar</div>
+        <div class="row justify-content-center">
+            <div class="row w-95 align-items-md-stretch justify-content-center">
+                {% for new in news %}
+                    <div class="card col-md-3 m-2">
+                        <img class="card-img-top p-4 rounded" src="/media/{{ new.image }}" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ new.posted_at|date:"d.m.Y" }}</h5>
+                            <h5 class="text-center new-title">{{ new.title|truncatewords:10 }}</h5>
+                            <div class="mb-3 mt-5 d-flex justify-content-center">
+                                <a href="/new/{{ new.pk }}" class="btn btn-primary">Giňişleýin</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="w-100 text-center text-secondary fw-bold my-5">Habarlar tagtasy boş</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block scripts %}
+{% endblock scripts %}

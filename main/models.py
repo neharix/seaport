@@ -1,11 +1,12 @@
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 # Create your models here.
 class New(models.Model):
     title = models.CharField("Sözbaşy", max_length=500)
     image = models.ImageField("Surat", upload_to="news/")
-    content = models.TextField()  # add ckeditor field
+    content = CKEditor5Field("Text", config_name="extends")  # add ckeditor field
     posted_at = models.DateTimeField("Neşir edilen wagty", auto_now_add=True)
 
     class Meta:

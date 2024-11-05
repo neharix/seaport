@@ -10,3 +10,11 @@ def main(request: HttpRequest):
         "views/main.html",
         {"news": New.objects.all().order_by("-posted_at")[:3]},
     )
+
+
+def news(request: HttpRequest):
+    return render(
+        request,
+        "views/news.html",
+        {"news": New.objects.all().order_by("-posted_at")},
+    )
