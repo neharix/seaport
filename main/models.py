@@ -28,7 +28,7 @@ class Terminal(models.Model):
         return self.name
 
 
-class Services(models.Model):
+class Service(models.Model):
     name = models.CharField("Ady", max_length=100)
 
     class Meta:

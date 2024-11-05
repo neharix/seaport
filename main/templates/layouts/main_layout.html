@@ -10,6 +10,7 @@
         | Seaport</title>
         <link href="{% static 'ui_framework/bootstrap/css/bootstrap.min.css' %}"
               rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="{% static "img/logo-favicon.png" %}">
         <style>
             @font-face {
                 font-family: 'Quicksand';
@@ -65,15 +66,19 @@
                                data-bs-toggle="dropdown"
                                aria-expanded="false">Terminallar</a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="#">Action</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </li>
+                                {% for terminal in terminals %}
+                                    <li>
+                                        <button class="dropdown-item"
+                                                onclick="location.href='/terminal/{{ terminal.pk }}/'">
+                                            {{ terminal.name }}
+                                        </button>
+                                    </li>
+                                    {% if terminals|length != forloop.counter %}
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </li>
                         <li class="nav-item dropdown dropdown-animation">
@@ -103,7 +108,7 @@
             {% endblock body %}
         </main>
         <!-- Footer -->
-        <footer class="text-center text-lg-start bg-body-tertiary text-muted border-top border-info">
+        <footer class="text-center text-lg-start bg-body-tertiary text-muted border-top border-secondary">
             <section class="">
                 <div class="container text-center text-md-start mt-5">
                     <!-- Grid row -->
@@ -124,23 +129,16 @@
                         <!-- Grid column -->
                         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">Products</h6>
-                            <p>
-                                <a href="#!" class="text-reset">Angular</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">React</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Vue</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Laravel</a>
-                            </p>
+                            <h6 class="text-uppercase fw-bold mb-4">Terminallar</h6>
+                            {% for terminal in terminals %}
+                                <p>
+                                    <a href="/terminal/{{ terminal.pk }}/" class="text-reset">{{ terminal.name }}</a>
+                                </p>
+                            {% endfor %}
                         </div>
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                            <h6 class="text-uppercase fw-bold mb-4">Hyzmatlarymyz</h6>
                             <p>
                                 <a href="#!" class="text-reset">Pricing</a>
                             </p>

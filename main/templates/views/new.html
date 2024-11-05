@@ -1,0 +1,28 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+{% block title %}
+    {{ new.posted_at|date:"d.m.Y" }} | Habar barada giňişleýin
+{% endblock title %}
+{% block head %}
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block navbar_items %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Baş sahypa</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'news' %}">Habarlar</a>
+    </li>
+{% endblock navbar_items %}
+{% block body %}
+    <div class="container my-4">
+        <div class="h4 text-center my-5">{{ new.title }}</div>
+        <div class="my-5">{{ new.content|safe }}</div>
+        <div class="my-5 d-flex justify-content-end fw-bold">{{ new.posted_at|date:"d.m.Y" }}</div>
+        <div class="my-5 d-flex justify-content-center">
+            <img class="w-100" src="/media/{{ new.image }}">
+        </div>
+    </div>
+{% endblock body %}
+{% block scripts %}
+{% endblock scripts %}

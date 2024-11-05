@@ -8,6 +8,7 @@ from .views import *
 urlpatterns = [
     path("", main, name="home"),
     path("news/", news, name="news"),
+    path("new/<int:new_pk>", new),
 ]
 
 if settings.DEBUG:
