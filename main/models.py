@@ -6,7 +6,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class New(models.Model):
     title = models.CharField("Sözbaşy", max_length=500)
     image = models.ImageField("Surat", upload_to="news/")
-    content = CKEditor5Field("Text", config_name="extends")  # add ckeditor field
+    content = CKEditor5Field("Text", config_name="extends")
     posted_at = models.DateTimeField("Neşir edilen wagty", auto_now_add=True)
 
     class Meta:
@@ -19,6 +19,8 @@ class New(models.Model):
 
 class Terminal(models.Model):
     name = models.CharField("Ady", max_length=100)
+    image = models.ImageField("Surat", upload_to="terminals/")
+    content = CKEditor5Field("Text", config_name="extends")  # add ckeditor field
 
     class Meta:
         verbose_name = "terminal"
@@ -30,6 +32,8 @@ class Terminal(models.Model):
 
 class Service(models.Model):
     name = models.CharField("Ady", max_length=100)
+    image = models.ImageField("Surat", upload_to="services/")
+    content = CKEditor5Field("Text", config_name="extends")
 
     class Meta:
         verbose_name = "hyzmat"

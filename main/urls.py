@@ -9,6 +9,7 @@ urlpatterns = [
     path("", main, name="home"),
     path("news/", news, name="news"),
     path("new/<int:new_pk>", new),
+    path("terminal/<int:terminal_pk>", terminal),
 ]
 
 if settings.DEBUG:

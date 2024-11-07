@@ -32,3 +32,7 @@ def new(request: HttpRequest, new_pk: int):
         "views/new.html",
         {"new": New.objects.get(pk=new_pk), "terminals": Terminal.objects.all()},
     )
+
+
+def terminal(request: HttpRequest, terminal_pk: int):
+    return render(request, "views/terminal.html", {})
