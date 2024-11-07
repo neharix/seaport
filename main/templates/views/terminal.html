@@ -1,0 +1,30 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+{% block title %}
+    {{ terminal.name }}
+{% endblock title %}
+{% block head %}
+    <link href="{% static 'css/info.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block navbar_items %}
+    <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Baş sahypa</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'news' %}">Habarlar</a>
+    </li>
+{% endblock navbar_items %}
+{% block body %}
+    <div class="vh-100">
+        <div id="info-bg"
+             class="d-flex align-items-center"
+             style="background: linear-gradient(0deg, rgba(5, 1, 36, 0.65), rgba(5, 1, 36, 0.65)), url(/media/{{ terminal.image }})">
+            <div class="mx-5">
+                <h1 class="text-light">{{ terminal.name }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5 pb-5">{{ terminal.content|safe }}</div>
+{% endblock body %}
+{% block scripts %}
+{% endblock scripts %}

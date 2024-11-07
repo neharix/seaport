@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}
+            {% endblock title %}
+        | Seaport</title>
+        <link href="{% static 'ui_framework/bootstrap/css/bootstrap.min.css' %}"
+              rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="{% static "img/logo-favicon.png" %}">
+        <style>
+            @font-face {
+                font-family: 'Quicksand';
+                src: url("{% static 'font/quicksand/Quicksand-VariableFont_wght.ttf' %}");
+            }
+        </style>
+        <link href="{% static 'css/global.css' %}" rel="stylesheet">
+        {% block head %}
+        {% endblock head %}
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+        
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                }
+            }
+        </style>
+        {% comment %} <link href="{% static 'css/style.css' %}" rel="stylesheet"> {% endcomment %}
+    </head>
+    <body>
+        <main class="vh-100">
+            {% block body %}
+            {% endblock body %}
+        </main>
+        <!-- Footer -->
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'ui_framework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/main_layout.js' %}"></script>
+        {% block scripts %}
+        {% endblock scripts %}
+    </body>
+</html>
